@@ -4,7 +4,7 @@ import { BsHeart } from "react-icons/bs";
 
 export default function SingleItemCard() {
   return (
-    <div className="group w-full  h-96 " x-data="{dropdownOpen:false}">
+    <div className="group w-full h-96 " x-data="{dropdownOpen:false}">
       <a href="@">
         <div className=" w-full h-72 md:h-72 lg:h-80 relative">
           <img className="w-full h-full" src="images/banner01.jpg" alt="item" />

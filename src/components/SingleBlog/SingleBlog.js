@@ -4,9 +4,9 @@ import { HiOutlineShare } from "react-icons/hi";
 
 export default function SingleBlog() {
   return (
-    <div className=" w-80 m-auto md:w-auto lg:w-auto shadow overflow-hidden ">
+    <div className=" w-auto m-auto md:w-auto lg:w-auto shadow overflow-hidden ">
       <div className="h-60">
-        <img className="h-full" src="images/banner04.jpg" alt="banner" />
+        <img className="h-full w-full" src="images/banner04.jpg" alt="banner" />
       </div>
       <div className="text-center px-4 pb-5">
         <a

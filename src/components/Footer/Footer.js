@@ -69,7 +69,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="text-center">
+          <div className="text-center my-10 md:my-0 lg:my-0 ">
             <a href="@" className="text-3xl mb-2 block">
               FM
             </a>
@@ -89,7 +89,7 @@ export default function Footer() {
             <h2 className="text-zinc-500 uppercase mb-2">
               Subscribe Our newsletter
             </h2>
-            <div className="flex justify-between border-b ">
+            <div className="flex justify-between border-b mt-5 md:mt-0 lg:mt-0 ">
               <input
                 type="text"
                 placeholder="Enter email"
@@ -102,7 +102,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="text-center py-5 border-t text-zinc-500">
+        <div className="text-center py-5 border-t text-zinc-500 mt-5">
           <p>Fahim muntasir &copy; 2022</p>
         </div>
       </div>

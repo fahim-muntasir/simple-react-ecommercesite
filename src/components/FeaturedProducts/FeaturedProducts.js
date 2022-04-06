@@ -9,7 +9,7 @@ export default function FeaturedProducts() {
           Our Featured
         </h1>
       </div>
-      <div className="grid gap-y-10 gap-x-8 grid-cols-2 lg:grid-cols-5 md:grid-cols-2  ">
+      <div className="grid gap-y-10 gap-x-8 grid-cols-2 lg:grid-cols-5 md:grid-cols-2">
         <SingleItemCard />
         <SingleItemCard />
         <SingleItemCard />
