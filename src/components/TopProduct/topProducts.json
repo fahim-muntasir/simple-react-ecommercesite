@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "name": "Barger",
+    "price": "100",
+    "prev_price": "150",
+    "image": "images/banner01.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Checken",
+    "price": "200",
+    "prev_price": "250",
+    "image": "images/banner01.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Pizza",
+    "price": "80",
+    "prev_price": "100",
+    "image": "images/banner01.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Roll",
+    "price": "50",
+    "prev_price": "800",
+    "image": "images/banner01.jpg"
+  }
+]

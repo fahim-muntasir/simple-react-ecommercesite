@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import Checkout from "../Checkout/Checkout";
 import Footer from "../Footer/Footer";
@@ -55,10 +55,7 @@ export default function Card() {
               </div>
             </li>
             <li>
-              <div
-                className="flex gap-2 items-center cursor-pointer "
-                onClick={checkoutHandlear}
-              >
+              <div className="flex gap-2 items-center cursor-pointer ">
                 <span
                   className={
                     isCheckout
@@ -90,7 +87,7 @@ export default function Card() {
             </li>
           </ul>
         </div>
-        {isShoppingCard && <ShoppingCard />}
+        {isShoppingCard && <ShoppingCard checkoutHandlear={checkoutHandlear} />}
         {isCheckout && <Checkout />}
       </div>
       <Footer />

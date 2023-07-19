@@ -1,5 +1,5 @@
-import React from "react";
 import SingleItemCard from "../SingleItemCard/SingleItemCard";
+import allProducts from "./topProducts.json";
 
 export default function TopProductSection() {
   return (
@@ -10,10 +10,15 @@ export default function TopProductSection() {
         </h1>
       </div>
       <div className="grid gap-y-10 gap-x-8 grid-cols-2 lg:grid-cols-4 md:grid-cols-2  ">
-        <SingleItemCard />
-        <SingleItemCard />
-        <SingleItemCard />
-        <SingleItemCard />
+        {allProducts.map((p) => (
+          <SingleItemCard
+            key={p.id}
+            productid={p.id}
+            name={p.name}
+            price={p.price}
+            prev_price={p.prev_price}
+          />
+        ))}
       </div>
     </section>
   );

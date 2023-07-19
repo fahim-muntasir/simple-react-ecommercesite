@@ -1,4 +1,3 @@
-import React from "react";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import OrderSummery from "./OrderSummery/OrderSummery";
 
