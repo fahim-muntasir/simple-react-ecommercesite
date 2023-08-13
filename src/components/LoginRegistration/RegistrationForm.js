@@ -20,8 +20,7 @@ export default function RegistrationForm() {
       })
       .catch(err => {
         console.log(err);
-      })
-    console.log(Username, email, password);
+      });
 
   }
   return (

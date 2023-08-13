@@ -1,22 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CgFacebook } from "react-icons/cg";
 import { FcGoogle } from "react-icons/fc";
 import Button from "../Button/Button";
 import Form from "../Form/Form";
 import Input from "../InputBox/InputBox";
+import { AuthContext } from "../../provider/AuthProvider";
 
 export default function LoginForm() {
+
+  const{loginUser} = useContext(AuthContext)
+
+  const handelSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    const email = form.email.value;
+    const password = form.password.value;
+    loginUser(email,password)
+    .then(result =>{
+      console.log(result.user);
+    })
+    .catch(error =>{
+      console.log(error.message);
+    })
+    console.log(email, password);
+
+  }
   return (
     <div>
-      <Form>
+      <Form onSubmit={handelSubmit}>
         <Input
           type="email"
           placeholder="Email Address"
+          id="email"
           className=" outline-none py-4 px-5 mb-5 w-full text-zinc-600 border bg-zinc-50 "
         />
         <Input
           type="password"
           placeholder="Password"
+          id="password"
           className=" outline-none py-4 px-5 mb-2 w-full text-zinc-600 border bg-zinc-50 "
         />
         <a
