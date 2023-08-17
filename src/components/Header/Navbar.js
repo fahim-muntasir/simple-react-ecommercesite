@@ -4,13 +4,18 @@ import {
     AiOutlineShoppingCart,
     AiOutlineUser,
 } from "react-icons/ai";
+import { IoLogOutOutline } from 'react-icons/io5';
 import { BsArrowLeft, BsHeart, BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import LoginRegistrationSection from "../LoginRegistration/LoginRegistrationSection";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import { useEffect } from "react";
 
 export default function Navbar() {
     const [navShowHide, setShowHide] = useState(false);
     const [loginRegShowHide, setLoginRegShowHide] = useState(false);
+    const { user, logOut } = useContext(AuthContext)
 
     const loginRegShow = () => {
         setLoginRegShowHide(true);
@@ -27,6 +32,17 @@ export default function Navbar() {
     const navHide = () => {
         setShowHide(false);
     };
+
+    const handelLogOut = () =>{
+        logOut()
+        .then(res =>{})
+        .catch(error =>{})
+    }
+
+    useEffect(()=>{
+        loginRegHide()
+    },[user?.email])
+
 
     return (
         <div className=" w-11/12 m-auto flex justify-between py-8 items-center ">
@@ -86,18 +102,16 @@ export default function Navbar() {
 
                 {/* responsive nav bar */}
                 <div
-                    className={`fixed md:fixed lg:hidden bg-zinc-800 h-[100%] w-full top-0 left-0 bottom-0 right-0 transition-all duration-300  bg-opacity-60 z-50 overflow-hidden ${
-                        navShowHide
+                    className={`fixed md:fixed lg:hidden bg-zinc-800 h-[100%] w-full top-0 left-0 bottom-0 right-0 transition-all duration-300  bg-opacity-60 z-50 overflow-hidden ${navShowHide
                             ? " visible opacity-100 "
                             : "invisible opacity-0 "
-                    }`}
+                        }`}
                 >
                     <nav
-                        className={`w-72 h-[100%] transition-all duration-300 px-3 pt-4 bg-zinc-900 relative ${
-                            navShowHide
+                        className={`w-72 h-[100%] transition-all duration-300 px-3 pt-4 bg-zinc-900 relative ${navShowHide
                                 ? "translate-0 opacity-100"
                                 : " -translate-x-full opacity-0 "
-                        }`}
+                            }`}
                     >
                         <div className="flex mb-4 ">
                             <input
@@ -110,11 +124,10 @@ export default function Navbar() {
                             </button>
                         </div>
                         <ul
-                            className={` transition  text-neutral-200 ${
-                                navShowHide
+                            className={` transition  text-neutral-200 ${navShowHide
                                     ? "duration-600 opacity-100 "
                                     : "duration-75 opacity-0 "
-                            } `}
+                                } `}
                         >
                             <li className=" border-b border-zinc-800 pl-2 mb-3 pb-2 hover:bg-green-500  duration-300 ">
                                 <a href="@">Home</a>
@@ -153,12 +166,15 @@ export default function Navbar() {
                             </div>
                         </Link>
                     </li>
-                    <li>
-                        <AiOutlineUser
-                            onClick={loginRegShow}
-                            className=" hover:text-green-500  duration-300 "
-                        />
-                    </li>
+                    {
+                        user?.email ? <li><IoLogOutOutline onClick={handelLogOut} size={30} /></li> : <li>
+                            <AiOutlineUser
+                                onClick={loginRegShow}
+                                className=" hover:text-green-500  duration-300 "
+                            />
+                        </li>
+                    }
+
                 </ul>
                 {/* login registration form  */}
                 <LoginRegistrationSection
